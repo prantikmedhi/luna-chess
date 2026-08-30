@@ -2,7 +2,7 @@
 
 A production-ready web chess experience for local two-player games and matches against **Luna**, a GPT-5.6-powered opponent served securely through Azure OpenAI.
 
-> This repository currently contains the complete product and engineering documentation needed to build the application. Implementation should follow the contracts in these documents.
+The application is implemented end to end with local two-player chess, server-validated Luna moves, automated tests, and a Vercel-ready build.
 
 ## Product scope
 
@@ -40,9 +40,7 @@ A production-ready web chess experience for local two-player games and matches a
 - Azure OpenAI, called only from a Next.js server route
 - Vercel
 
-## Local setup target
-
-Once the app is implemented:
+## Local setup
 
 ```bash
 npm install
@@ -50,12 +48,20 @@ cp .env.example .env.local
 npm run dev
 ```
 
+Release checks:
+
+```bash
+npm run lint
+npm test
+npm run build
+```
+
 Expected server variables:
 
 ```env
 AZURE_OPENAI_API_KEY=
 AZURE_OPENAI_ENDPOINT=
-AZURE_OPENAI_API_VERSION=
+AZURE_OPENAI_API_VERSION= # optional; defaults to 2024-10-21
 AZURE_OPENAI_DEPLOYMENT=
 ```
 
